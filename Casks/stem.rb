@@ -11,7 +11,7 @@ cask "stem" do
 
   app "stem.app"
 
-  postflight do
+  postflight_steps do
     system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "/Applications/stem.app"]
   end
 end

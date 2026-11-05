@@ -12,7 +12,7 @@ cask "kcode" do
   app "kcode.app"
 
   # ad-hoc signed (not notarized) -> strip quarantine so it launches on Tahoe
-  postflight do
+  postflight_steps do
     system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "/Applications/kcode.app"]
   end
 

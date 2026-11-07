@@ -1,15 +1,17 @@
 class Krypton < Formula
   desc "Programming language compiler and toolchain"
   homepage "https://github.com/t3m3d/krypton"
-  # macOS is 2.4.8. Linux x86_64 remains on 2.4.4. Windows remains on 2.3.0.
-  license "MIT"
+  # macOS is 2.4.9. Linux x86_64 remains on 2.4.4. Windows remains on 2.3.0.
+  license "Apache-2.0"
 
   if OS.mac?
-    url "https://github.com/t3m3d/krypton/releases/download/v2.4.8/krypton-2.4.8-macos-arm64.tar.gz"
-    sha256 "e32b3396bfb2d14ac036609a75408cc85da7640689dd08b8dfbb338957625ea2"
+    url "https://github.com/t3m3d/krypton/releases/download/v2.4.9/krypton-2.4.9-macos-arm64.tar.gz"
+    version "2.4.9"
+    sha256 "e0be5e47c127913784c98766cc41159decc826888076c38c7711bb3190492d12"
     depends_on arch: :arm64
   elsif OS.linux?
     url "https://github.com/t3m3d/krypton/releases/download/2.4.4/krypton-2.4.4-linux-x86_64.tar.gz"
+    version "2.4.4"
     sha256 "98f020363334c8166b1e7a6e617ba046d4505164862b9f0b95214c59b57b3dad"
   end
 
@@ -63,13 +65,13 @@ class Krypton < Formula
   test do
     (testpath/"hello.k").write <<~KRYPTON
       just run {
-        kp("hello from krypton")
+        print("hello from krypton")
       }
     KRYPTON
     output = shell_output("#{bin}/kcc #{testpath}/hello.k -o #{testpath}/hello && #{testpath}/hello")
     assert_includes output, "hello from krypton"
 
-    expected = OS.mac? ? "2.4.8" : "2.4.4"
+    expected = OS.mac? ? "2.4.9" : "2.4.4"
     assert_match expected, shell_output("#{bin}/kcc --version")
   end
 end

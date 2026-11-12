@@ -12,6 +12,6 @@ cask "brain" do
   app "brain.app"
 
   postflight_steps do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "/Applications/brain.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "/Applications/brain.app"]
   end
 end

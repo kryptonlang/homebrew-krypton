@@ -1,6 +1,6 @@
 class Kryofetch < Formula
   desc "System fetch tool for macOS and Linux, built with the Krypton language"
-  homepage "https://github.com/t3m3d/kryofetch"
+  homepage "https://github.com/kryptonlang/kryofetch"
   version "1.3.7"
   license "MIT"
 
@@ -8,14 +8,14 @@ class Kryofetch < Formula
   # would drop Linux entirely). on_macos/on_linux pick the right native build.
   on_macos do
     on_arm do
-      url "https://github.com/t3m3d/kryofetch/releases/download/v1.3.7/kryofetch-1.3.7-macos-arm64.tar.gz"
+      url "https://github.com/kryptonlang/kryofetch/releases/download/v1.3.7/kryofetch-1.3.7-macos-arm64.tar.gz"
       sha256 "398c88f19665d935a4697af55ba3ebcfa86d4666d4c61fd78825dfd4b4cbe93d"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/t3m3d/kryofetch/releases/download/v1.3.7/kryofetch-1.3.7-linux-x86_64.tar.gz"
+      url "https://github.com/kryptonlang/kryofetch/releases/download/v1.3.7/kryofetch-1.3.7-linux-x86_64.tar.gz"
       sha256 "14e392a0e96f8d60042dc899f9c17b27d4d4229f9e4bad803d877211f5a49594"
     end
   end

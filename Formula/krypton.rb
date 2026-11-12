@@ -1,16 +1,16 @@
 class Krypton < Formula
   desc "Programming language compiler and toolchain"
-  homepage "https://github.com/t3m3d/krypton"
+  homepage "https://github.com/kryptonlang/krypton"
   # macOS is 2.5.0-alpha. Linux x86_64 remains on 2.4.4.
   license "Apache-2.0"
 
   if OS.mac?
-    url "https://github.com/t3m3d/krypton/releases/download/v2.5.0-alpha/krypton-2.5.0-alpha-macos-arm64.tar.gz"
+    url "https://github.com/kryptonlang/krypton/releases/download/v2.5.0-alpha/krypton-2.5.0-alpha-macos-arm64.tar.gz"
     version "2.5.0-alpha"
     sha256 "271467a7a17c6c493659af22580a560f22b114cc84e589577639a216ef7d6b06"
     depends_on arch: :arm64
   elsif OS.linux?
-    url "https://github.com/t3m3d/krypton/releases/download/2.4.4/krypton-2.4.4-linux-x86_64.tar.gz"
+    url "https://github.com/kryptonlang/krypton/releases/download/2.4.4/krypton-2.4.4-linux-x86_64.tar.gz"
     version "2.4.4"
     sha256 "98f020363334c8166b1e7a6e617ba046d4505164862b9f0b95214c59b57b3dad"
   end

@@ -8,7 +8,7 @@ cask "brain" do
   homepage "https://krypton-lang.org/programs/brain.html"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
   app "brain.app"
 
   postflight_steps do
